@@ -269,9 +269,10 @@ public class ObjectMotion : MonoBehaviour {
 					if(!anySoapLeft)
 					{
 						GameObject.Find("sponge").GetComponent<PaintBrush>().bubble.GetComponent<ParticleSystem>().Stop ();
-						if(ScrollButtonAction.characterNo == 0)
-						{
-							characterActions = AnimationHandler._instance.myCharacter.GetComponent<DetectActions>();
+                        //SECARSE TOALLA
+                        if (ScrollButtonAction.characterNo <= 1)
+                        {
+                            characterActions = AnimationHandler._instance.myCharacter.GetComponent<DetectActions>();
 							AnimationHandler._instance.PlayAnim(characterActions.towelAnim.name,characterActions.towelAnim.length*2,1);
 						}
 						GameObject starsPrefab = (GameObject)Instantiate (starsAfterWash);
