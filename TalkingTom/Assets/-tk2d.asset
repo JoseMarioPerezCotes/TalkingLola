@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41cb500cf0f58e74f9a52a8af931edde, type: 3}
+  m_Name: -tk2d
+  m_EditorClassIdentifier: 
+  version: 4
+  spriteAnimationIndex: []
+  fontIndex: []
+  spriteCollectionIndex:
+  - name: GUI
+    spriteCollectionGUID: f5fd19f9bebc00c4192066408265d2b6
+    spriteCollectionDataGUID: 82406a8c8fbf1a440913b69b3f496a52
+    spriteNames:
+    - score_box
+    - but_menu
+    - but_next
+    - but_re-play
+    - exit_button
+    - instruction_button
+    - but_pause
+    - but_sound_no
+    - but_previous
+    - play_button
+    - next_button
+    - setting_button
+    - but_play
+    - but_sound_off
+    - back_button
+    - High_Score_btn
+    spriteTextureGUIDs:
+    - 9e50e1798a2c5664ba4d4567c45b6309
+    - 0cebfba95a505ec4b819c3ae0ca5cd8d
+    - 11270e37b067081468977d3cda038933
+    - 197bfa45bffe2ac4a8da25f802192320
+    - 2d1b57bb49a79cd44b077294520696ed
+    - 50d5c10f45d6d394c9c9c93a9d45826c
+    - 66df948d31c719140b96cd0d67dbf813
+    - 78a610ab8fefdda4e99bcd5b5bdcac3b
+    - 93620b6ee1ba0b14882ae5526f8ca1a0
+    - 9da23f4f440fa6a40b5ad1eb5d19f2d1
+    - b261837f39f5ea841a388c0e9f5fe746
+    - b3d72da1c4f095c4ebddc73249eff7f9
+    - bb16aba4f55d33a4bac20abfec77e01f
+    - d24b2a86d48d1414182a77c566c492c9
+    - f4b83e96a00e5ca489548097a0032194
+    - d09a31be5b3b3554a9ebcf34070ab25a
+    spriteTextureTimeStamps:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    managedSpriteCollection: 0
+    loadable: 0
+    assetName: 
+    version: 3
