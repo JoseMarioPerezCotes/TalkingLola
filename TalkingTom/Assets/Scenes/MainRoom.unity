@@ -963,6 +963,14 @@ Prefab:
       propertyPath: InitialModule.startRotationY.scalar
       value: 0.0000
       objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 11b4e41333bd440ef92c6ae455692f0e, type: 2}
+      propertyPath: InitialModule.startRotationX.scalar
+      value: 0.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 11b4e41333bd440ef92c6ae455692f0e, type: 2}
+      propertyPath: InitialModule.startRotationY.scalar
+      value: 0.0000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11b4e41333bd440ef92c6ae455692f0e, type: 2}
   m_IsPrefabParent: 0
@@ -1768,6 +1776,10 @@ Prefab:
     - target: {fileID: 478400, guid: bc93f7d0c29384ea6ac9664fef3f833a, type: 2}
       propertyPath: m_LocalPosition.y
       value: -216.00002
+      objectReference: {fileID: 0}
+    - target: {fileID: 178408, guid: bc93f7d0c29384ea6ac9664fef3f833a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc93f7d0c29384ea6ac9664fef3f833a, type: 2}
