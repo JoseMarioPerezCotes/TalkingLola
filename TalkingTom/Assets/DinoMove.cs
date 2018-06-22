@@ -27,9 +27,9 @@ public class DinoMove : MonoBehaviour {
 		_instance = this;
 		if(!PlayerPrefs.HasKey("Character"))
 		{
-            PlayerPrefs.SetInt("Character", character.IndexOf(character[0]));//PlayerPrefs.SetInt("Character",0);
-            ScrollButtonAction.characterNo = character.IndexOf(character[0]);                                    //ScrollButtonAction.characterNo = 0;
-        }
+			PlayerPrefs.SetInt("Character",0);
+			ScrollButtonAction.characterNo = 0;
+		}
         else { 
 			ScrollButtonAction.characterNo = PlayerPrefs.GetInt("Character");
         }
@@ -57,18 +57,12 @@ public class DinoMove : MonoBehaviour {
                 //(GameObject)Instantiate(Resources.Load("CatVirtual"));
                 break;
 		}
-        //AQUI VIENEN LOS BOTONES POR DEFECTO SIN ANIMACIONES DEL GATO
-        if (ScrollButtonAction.characterNo > 1 )//if(ScrollButtonAction.characterNo < 3)
+        if (ScrollButtonAction.characterNo > 0)//if(ScrollButtonAction.characterNo < 3)
         {
-            Debug.Log("EN DINO MOVE");
-            Debug.Log("SCROLLBUTTON.CHARACTERNO " +ScrollButtonAction.characterNo);
-
-
-            VirtualRealityPanel._instance.otherAnimations.SetActive (true);
+			VirtualRealityPanel._instance.otherAnimations.SetActive (true);
 			VirtualRealityPanel._instance.catAnimations.SetActive (false);
 		}
-        //SE AGREGA ESTE CONDICIONAL PARA QUE LOS BOTONES ADICIONALES DEL PEDO Y EL BAILE SE AGREGUEN
-		else if (ScrollButtonAction.characterNo <= 1)//else
+		else
 		{
 			VirtualRealityPanel._instance.otherAnimations.SetActive (false);
 			VirtualRealityPanel._instance.catAnimations.SetActive (true);
