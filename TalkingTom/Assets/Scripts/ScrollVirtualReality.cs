@@ -235,12 +235,12 @@ public class ScrollVirtualReality : MonoBehaviour {
 			switch(CountClick)
 			{
 			case 0:
-                characterNo = 0;//character.IndexOf(character[0]);  // --- FOX
-				ScrollButtonAction.characterNo = 0;//character.IndexOf(character[0]);
+				characterNo = character.IndexOf(character[0]);  // --- FOX
+				ScrollButtonAction.characterNo = character.IndexOf(character[0]);
                     break;
 			case 1:
-                    characterNo = 1; //character.IndexOf(character[1]); //   --  PIG
-                    ScrollButtonAction.characterNo = 1;// character.IndexOf(character[1]);
+				characterNo = character.IndexOf(character[1]); //   --  PIG
+				ScrollButtonAction.characterNo = character.IndexOf(character[1]);
                     break;
 			case 2:
 				characterNo = character.IndexOf(character[2]); //     --- bull
@@ -294,19 +294,19 @@ public class ScrollVirtualReality : MonoBehaviour {
 			{
 			case 0:
 				myCharacter = (GameObject)Instantiate(Resources.Load(character[0])); //(GameObject)Instantiate(Resources.Load("DogVirtual"));
-                    Debug.LogError(character[0]);
+                    Debug.LogError("1");
 				break;
 			case 1:
 				myCharacter = (GameObject)Instantiate(Resources.Load(character[1])); //(GameObject)Instantiate(Resources.Load("OwlVirtual"));
-                    Debug.LogError(character[1]);
+                    Debug.LogError("1");
 				break;
 			case 2:
 				myCharacter = (GameObject)Instantiate(Resources.Load(character[2])); //(GameObject)Instantiate(Resources.Load("TurtleVirtual"));
-                    Debug.LogError(character[2]);
+                    Debug.LogError("1");
 				break;
 			case 3:
 				myCharacter = (GameObject)Instantiate(Resources.Load(character[3])); // (GameObject)Instantiate(Resources.Load("CatVirtual"));
-                    Debug.LogError(character[3]);
+                    Debug.LogError("1");
 				break;
 			}
 

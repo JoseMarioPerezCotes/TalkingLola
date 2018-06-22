@@ -6986,7 +6986,7 @@ MonoBehaviour:
   mydino: {fileID: 0}
   character:
   - VacaLolaVirtual
-  - CaballoVirtual
+  - Caballo
   - Owl
   - Turtle
 --- !u!114 &114395738970668744
