@@ -3959,8 +3959,8 @@ MonoBehaviour:
   gymLock: {fileID: 113870}
   popUpPanel: {fileID: 182620}
   loaderPanel: {fileID: 182618}
-  gymCost: 1000
-  playgroundCost: 1000
+  gymCost: 0
+  playgroundCost: 0
   roomLight: {fileID: 0}
   coinsGeneratedViaMiniGames: {fileID: 175802}
   bedBack: {fileID: 0}
