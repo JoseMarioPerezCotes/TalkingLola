@@ -197,7 +197,7 @@ public class GetMoreCoins : MonoBehaviour
 #if UNITY_EDITOR
         string adUnitsId = "Sin uso";
 #elif UNITY_ANDROID
-        string adUnitsId = "ca-app-pub-6113913621681882/5243695466";
+        string adUnitsId = "ca-app-pub-6113913621681882/1495078568";
 #elif UNITY_IPHONE
         string adUnitsId = "ca-app-pub-6113913621681882/9500221749";
 #else
