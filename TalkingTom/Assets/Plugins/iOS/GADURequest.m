@@ -1,9 +1,5 @@
 // Copyright 2014 Google Inc. All Rights Reserved.
 
-#import <Foundation/Foundation.h>
-
-#import "GADAdMobExtras.h"
-#import "GADRequest.h"
 #import "GADURequest.h"
 
 @implementation GADURequest
@@ -14,13 +10,14 @@
     _testDevices = [[NSMutableArray alloc] init];
     _keywords = [[NSMutableArray alloc] init];
     _extras = [[NSMutableDictionary alloc] init];
+    _mediationExtras = [[NSMutableArray alloc] init];
   }
   return self;
 }
 
 - (void)addTestDevice:(NSString *)deviceID {
-  if ([deviceID isEqualToString:GADU_SIMULATOR_ID]) {
-    [self.testDevices addObject:GAD_SIMULATOR_ID];
+  if ([deviceID isEqualToString:@"SIMULATOR"]) {
+    [self.testDevices addObject:kGADSimulatorID];
   } else {
     [self.testDevices addObject:deviceID];
   }
@@ -31,7 +28,7 @@
 }
 
 - (void)setBirthdayWithMonth:(NSInteger)month day:(NSInteger)day year:(NSInteger)year {
-  NSDateComponents *components = [[[NSDateComponents alloc] init] autorelease];
+  NSDateComponents *components = [[NSDateComponents alloc] init];
   components.month = month;
   components.day = day;
   components.year = year;
@@ -56,17 +53,25 @@
   [self.extras setValue:value forKey:key];
 }
 
+- (void)setMediationExtras:(id<GADAdNetworkExtras>)mediationExtras {
+  [self.mediationExtras addObject:mediationExtras];
+}
+
 - (GADRequest *)request {
   GADRequest *request = [GADRequest request];
   request.testDevices = self.testDevices;
   request.keywords = self.keywords;
   request.birthday = self.birthday;
   request.gender = self.gender;
+  request.requestAgent = self.requestAgent;
   [request tagForChildDirectedTreatment:self.tagForChildDirectedTreatment];
-  [self.extras setValue:@"1" forKey:@"unity"];
-  GADAdMobExtras *extras = [[[GADAdMobExtras alloc] init] autorelease];
+  GADExtras *extras = [[GADExtras alloc] init];
   extras.additionalParameters = self.extras;
   [request registerAdNetworkExtras:extras];
+
+  for (id<GADAdNetworkExtras> mediationExtras in self.mediationExtras) {
+    [request registerAdNetworkExtras:mediationExtras];
+  }
   return request;
 }
 

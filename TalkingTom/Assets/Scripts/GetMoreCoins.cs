@@ -2,20 +2,33 @@
 using System.Collections;
 using MiniJSON;
 using UnityEngine.Advertisements;
+using GoogleMobileAds;
+using GoogleMobileAds.Api;
 using Facebook.Unity;
+using System;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class GetMoreCoins : MonoBehaviour
 {
+    private RewardBasedVideoAd rewardedVideo;
 
 	RoomUIManager uiManager;
 	public UILabel myCoinsLabel;
 	// Use this for initialization
+
 	void Start ()
 	{
-		uiManager = GameObject.Find ("UI Root").GetComponent<RoomUIManager> ();
+        rewardedVideo = RewardBasedVideoAd.Instance;
+
+        rewardedVideo.OnAdLoaded += HandleOnAdLoaded;
+        rewardedVideo.OnAdFailedToLoad += HandleOnAdFailedToLoad;
+        rewardedVideo.OnAdRewarded += HandleOnAdRewarded;
+        rewardedVideo.OnAdClosed += HandleOnAdClosed;
+
+        uiManager = GameObject.Find ("UI Root").GetComponent<RoomUIManager> ();
 		myCoinsLabel.text = PlayerPrefs.GetInt ("MyCoins").ToString ();
+
 	}
 	
 	// Update is called once per frame
@@ -31,21 +44,21 @@ public class GetMoreCoins : MonoBehaviour
 
 	public void FBLogin ()
 	{
-//		if(!LoaderPanel.loaderActive && !PopupPanel.popupPanelActive)
-//		{
-//			if(!PlayerPrefs.HasKey("FbLogged"))
-//			{
-//				uiManager.loaderPanel.SetActive (true);
-//				FB.Login("email",LoginCallback);
-//			}
-//			else
-//			{
-//				uiManager.ActivatePopup ("You are already logged in",false);
-//			}
-//		}
-	}
+        //		if(!LoaderPanel.loaderActive && !PopupPanel.popupPanelActive)
+        //		{
+        //			if(!PlayerPrefs.HasKey("FbLogged"))
+        //			{
+        //				uiManager.loaderPanel.SetActive (true);
+        //				FB.Login("email",LoginCallback);
+        //			}
+        //			else
+        //			{
+        //				uiManager.ActivatePopup ("You are already logged in",false);
+        //			}
+        //		}       		
+    }
 
-	string lastResponse;
+    string lastResponse;
 
 	void LoginCallback (IResult result)
 	{
@@ -178,4 +191,60 @@ public class GetMoreCoins : MonoBehaviour
 //			Destroy (gameObject);
 //		}
 	}
+
+    public void LoadRewardedVideo()
+    {
+#if UNITY_EDITOR
+        string adUnitsId = "Sin uso";
+#elif UNITY_ANDROID
+        string adUnitsId = "ca-app-pub-6113913621681882/5243695466";
+#elif UNITY_IPHONE
+        string adUnitsId = "ca-app-pub-6113913621681882/9500221749";
+#else
+        string adUnitsId = "Plataforma no reconocida";
+#endif
+        if (Application.internetReachability != NetworkReachability.NotReachable)
+        {
+            //AdRequest request = new AdRequest.Builder().AddTestDevice("DE609E45-7DFF-4310-8347-CE3E1838509C").Build(); //Tablet
+            AdRequest request = new AdRequest.Builder().AddTestDevice("04F6FEDD-A0D7-4154-88C3-BF17C3933478").Build(); //Lenovo
+            //AddTestDevice("037ce47b-2924-4132-8969-5db5d5fa6274").Build(); //Huawei
+            //AdRequest request = new AdRequest.Builder().AddTestDevice("ffbcf4dc-72d3-4a29-90d9-11c554abc6dd").Build(); //Samsung
+            rewardedVideo.LoadAd(request, adUnitsId);
+        }
+
+    }
+    public void ShowRewardedVideo()
+    {
+        if (rewardedVideo.IsLoaded())
+        {
+            rewardedVideo.Show();
+        }
+        
+
+    }
+
+    public void HandleOnAdLoaded(object sender, EventArgs args)
+    {
+        ShowRewardedVideo();
+    }
+    public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
+    {
+       
+    }
+    public void HandleOnAdClosed(object sender, EventArgs args)
+    {       
+
+    }
+    public void HandleOnAdRewarded(object sender, Reward args)
+    {
+    }
+    private void OnDisable()
+    {
+        rewardedVideo.OnAdLoaded -= HandleOnAdLoaded;
+        rewardedVideo.OnAdFailedToLoad -= HandleOnAdFailedToLoad;
+        rewardedVideo.OnAdClosed -= HandleOnAdClosed;
+        rewardedVideo.OnAdRewarded -= HandleOnAdRewarded;
+
+    }
 }
+
