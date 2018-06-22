@@ -5,11 +5,11 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400000}
-  - 114: {fileID: 11400002}
-  - 114: {fileID: 11400000}
+  - component: {fileID: 400000}
+  - component: {fileID: 11400002}
+  - component: {fileID: 11400000}
   m_Layer: 0
   m_Name: ProgressBar
   m_TagString: Untagged
@@ -22,13 +22,13 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400002}
-  - 23: {fileID: 2300000}
-  - 33: {fileID: 3300000}
-  - 114: {fileID: 11400004}
-  - 114: {fileID: 11400006}
+  - component: {fileID: 400002}
+  - component: {fileID: 2300000}
+  - component: {fileID: 3300000}
+  - component: {fileID: 11400004}
+  - component: {fileID: 11400006}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -41,12 +41,12 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 400004}
-  - 23: {fileID: 2300002}
-  - 33: {fileID: 3300002}
-  - 114: {fileID: 11400008}
+  - component: {fileID: 400004}
+  - component: {fileID: 2300002}
+  - component: {fileID: 3300002}
+  - component: {fileID: 11400008}
   m_Layer: 0
   m_Name: ProgressBar
   m_TagString: Untagged
@@ -61,13 +61,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.986540318, y: -.484514624, z: 0}
+  m_LocalPosition: {x: -0.9865403, y: -0.48451462, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
   - {fileID: 400004}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &400002
 Transform:
   m_ObjectHideFlags: 1
@@ -75,11 +76,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.021874994, z: .0199999996}
+  m_LocalPosition: {x: 0, y: -0.021874994, z: 0.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &400004
 Transform:
   m_ObjectHideFlags: 1
@@ -87,13 +89,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .00698029995, y: -.021874994, z: 0}
+  m_LocalPosition: {x: 0.0069803, y: -0.021874994, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2300000
-Renderer:
+MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -101,19 +104,31 @@ Renderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: d572e11b9f81d4a99a0a2811137dbfb3, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &2300002
-Renderer:
+MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -121,16 +136,28 @@ Renderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: d572e11b9f81d4a99a0a2811137dbfb3, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &3300000
 MeshFilter:
@@ -157,8 +184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a677072d2a0bc494abd400e1dd1a0918, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bMin: {x: 0, y: -.0406250134, z: 0}
-  bMax: {x: .800000012, y: 0, z: 0}
+  bMin: {x: 0, y: -0.040625013, z: 0}
+  bMax: {x: 0.8, y: 0, z: 0}
   layoutItems:
   - sprite: {fileID: 11400006}
     UIMask: {fileID: 0}
@@ -173,7 +200,7 @@ MonoBehaviour:
     sizeProportion: 1
     inLayoutList: 1
     childDepth: 0
-    oldPos: {x: -.986540318, y: -.506389618, z: .0199999996}
+    oldPos: {x: -0.9865403, y: -0.5063896, z: 0.02}
   - sprite: {fileID: 11400008}
     UIMask: {fileID: 0}
     layout: {fileID: 0}
@@ -187,7 +214,7 @@ MonoBehaviour:
     sizeProportion: 1
     inLayoutList: 1
     childDepth: 0
-    oldPos: {x: -.979560018, y: -.506389618, z: 0}
+    oldPos: {x: -0.97956, y: -0.5063896, z: 0}
   autoResizeCollider: 0
 --- !u!114 &11400002
 MonoBehaviour:
@@ -256,8 +283,8 @@ MonoBehaviour:
   legacyMode: 0
   borderTop: 0
   borderBottom: 0
-  borderLeft: .352941185
-  borderRight: .352941185
+  borderLeft: 0.3529412
+  borderRight: 0.3529412
   _createBoxCollider: 0
 --- !u!114 &11400008
 MonoBehaviour:
@@ -288,8 +315,8 @@ MonoBehaviour:
   legacyMode: 0
   borderTop: 0
   borderBottom: 0
-  borderLeft: .200000003
-  borderRight: .200000003
+  borderLeft: 0.2
+  borderRight: 0.2
   _createBoxCollider: 0
 --- !u!1001 &100100000
 Prefab:
@@ -302,4 +329,3 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100000}
   m_IsPrefabParent: 1
-  m_IsExploded: 1
